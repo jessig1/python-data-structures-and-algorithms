@@ -15,3 +15,8 @@ n! = n * (n-1)!
 3! = 3 * 2! * 1
 2! = 2 * 1!
 1! = 1 * 0!
+
+determining complexity
+* number of stack frames
+* number of recursive calls more exponential complexityother operations in function
+* space complexity (max number of stack frames)
