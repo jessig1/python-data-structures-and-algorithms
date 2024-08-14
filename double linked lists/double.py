@@ -64,20 +64,18 @@ def pop_left(self):
 
 #remove tail (pop right) = remove from right of list
 #time = O(n) due to nested loop space = O(1)
-def pop_right(self):
+def pop_left(self):
     if not self._length:
         raise Exception("empty list")
-    tail_value = self.tail.value
-    if not self._length:
+    former_tail = self.tail
+    if self._length == 1:
         self.head = self.tail = None
     else:
-        temp_node = self.head
-        while temp_node.next is not self.tail:
-            temp_node = temp_node.next
-        self.tail = temp_node
-        self.tail.next = None
+        self.head = former_tail.previous
+        former_tail.previous - None
+    self.tail.next = None
     self._length -= 1
-    return tail_value
+    return former_tail.value
 
 #remove defined value time = O(n) space = O(1)
 def remove(self, value):
@@ -93,8 +91,10 @@ def remove(self, value):
     if current_node is None:
         raise ValueError("Item not on list")
     if current_node.Next is None:
-        self.tail = previous_node
+        return self.pop_right()
+    current_node.next.previous = previous_node
     previous_node.next = current_node.next
+    current_node.previous = None
     current_node.next = None
     self._length -= 1
     return current_node.value
