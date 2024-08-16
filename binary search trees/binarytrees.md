@@ -11,5 +11,7 @@ root = top node (only 1)
 leaf = bottom node in tree (no children)
 no linking of nodes on same level only 1 parent per child
 common case is traversing directories or DOM markup
+successor = node with next higher value in tree
+predecessor = node with next smaller value in tree
 
 Binary Search Tree = nodes only have 2 children max, values to left of node need to be less than those on the right
